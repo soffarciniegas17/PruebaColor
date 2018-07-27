@@ -1,3 +1,5 @@
+package com.sophia1.colorapp;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -5,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBase extends SQLiteOpenHelper{
+
 
     Context context;
     private final static String dataName = "partida.db";
