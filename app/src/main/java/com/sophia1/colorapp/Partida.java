@@ -1,6 +1,7 @@
 package com.sophia1.colorapp;
 
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -80,20 +81,74 @@ public class Partida extends AppCompatActivity {
 
 
     public void juego (){
-        desordenar();
-        asignarC();
-        palabra.setText(coloresT[random()]);
+        mostrar();
         total++;
+        tiempoPalabra();
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                palabraTime.cancel();
                 if (numeros[0]==p){
                     bien++;
-                    f
+                } else {
+                    mal++;
                 }
+                juego();
             }
         });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                palabraTime.cancel();
+                if (numeros[1]==p){
+                    bien++;
+                } else {
+                    mal++;
+                }
+                juego();
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                palabraTime.cancel();
+                if (numeros[2]==p){
+                    bien++;
+                } else {
+                    mal++;
+                }
+                juego();
+            }
+        });
+
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                palabraTime.cancel();
+                if (numeros[3]==p){
+                    bien++;
+                } else {
+                    mal++;
+                }
+                juego();
+            }
+        });
+
+    }
+
+    public void mostrar (){
+        desordenar();
+        asignarC();
+        palabra.setText(coloresT[random()]);
+    }
+
+    CountDownTimer palabraTime;
+    public void tiempoPalabra (){
+
 
     }
 }
